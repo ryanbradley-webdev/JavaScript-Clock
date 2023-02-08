@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    height: 100dvh;
+    background-color: rgb(117, 27, 27);
+    overflow: hidden;
+}
+
+.clock-rim {
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.center {
+    position: relative;
+    transform-origin: center;
+    rotate: -90deg;
+}
+
+#inner-circle-big,
+#inner-circle-small,
+#outer-circle-big,
+#outer-circle-small,
+#outermost-circle-big,
+#outermost-circle-small,
+.clock-hand-center  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: 1s linear;
+}
+
+#inner-circle-big,
+#inner-circle-small,
+#outer-circle-big,
+#outer-circle-small,
+#outermost-circle-big,
+#outermost-circle-small {
+    opacity: 0.2;
+}
+
+#inner-circle-big {
+    width: 800px;
+}
+
+#clock-marks {
+    width: 690px;
+}
+
+#outer-circle-big {
+    width: 1130px;
+}
+
+#outer-circle-small {
+    width: 1092px;
+}
+
+#outermost-circle-big {
+    width: 1700px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#outermost-circle-small {
+    width: 1500px;
+}
+
+.clock-hand-center {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 1);
+    transform: translate(-50%, -50%) rotate(00deg);
+}
+
+#seconds {
+    height: 50px;
+    width: 50px;
+    transition: 0.2s cubic-bezier(0.12, 0.65, 0.51, 1.48);
+}
+
+#minutes {
+    height: 35px;
+    width: 35px;
+}
+
+#hours {
+    height: 20px;
+    width: 20px;
+}
+
+#seconds::after,
+#minutes::after,
+#hours::after {
+    display: block;
+    position: relative;
+    content: '';
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#seconds::after {
+    width: 339px;
+    height: 2px;
+}
+
+#minutes::after {
+    width: 310px;
+    height: 7px;
+}
+
+#hours::after {
+    width: 250px;
+    height: 10px;
+}
